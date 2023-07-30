@@ -12,6 +12,7 @@ import Form from "react-bootstrap/Form";
 import "../index.css";
 import Shimmer from "./Shimmer";
 import Cards from "./Cards";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [restaurant, setRestaurant] = useState([]);
@@ -46,7 +47,7 @@ const Body = () => {
   }, []);
   return (
     <>
-      <div class="input-group mb-3">
+      <div className="input-group mb-3">
         <input
           type="text"
           className="form-control"
@@ -59,7 +60,7 @@ const Body = () => {
           aria-label="Search..."
           aria-describedby="basic-addon2"
         />
-        <div class="input-group-append">
+        <div className="input-group-append">
           <button
             className="btn btn-outline-secondary"
             type="button"
@@ -78,7 +79,9 @@ const Body = () => {
         <Container className="d-flex flex-wrap gap-5 mt-4">
               {filteredList && filteredList.map((e) => {
             return (
+              <Link to={`/menu/${e.info?.id}`} key={e.info?.id}>
               <Cards key={e.info?.id} {...e.info} />
+              </Link>
             );
             })}
 
