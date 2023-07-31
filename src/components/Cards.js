@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import { ImageURL } from "../util/restaurantData";
 
 const Cards = ({
   name,
@@ -15,7 +16,7 @@ const Cards = ({
       <Card.Img
         variant="top"
         src={
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
+          ImageURL +
           cloudinaryImageId
         }
       />
